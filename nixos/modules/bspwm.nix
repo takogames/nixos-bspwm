@@ -1,29 +1,27 @@
+
 { config, lib, pkgs, ...}: with lib;
 {
 	services.xserver = {
 		enable = true;
-		layout = "us";
-		xkbOptions = "eurosign:e";
-	  desktopManager.xfce = {
-			enable = true;
-			enableXfwm = false;
-		};
-	  windowManager.bspwm.enable = true;
-	  #windowManager.bspwm.package = "pkgs.bspwm-unstable";
-		windowManager.default = "bspwm";
-		windowManager.bspwm.configFile = "/home/user/dotfiles/common/bspwm/bspwmrc";
-		windowManager.bspwm.sxhkd.configFile= "/home/user/dotfiles/common/bspwm/sxhkdrc";
-		desktopManager.xterm.enable = false;
+		xkb.layout = "us";
+		xkb.options = "eurosign:e";
 
-    displayManager.lightdm = {
-      enable = true;
-      autoLogin.enable = true;
-      autoLogin.user = "user";
-    };
-		#displayManager.auto = {
-		#	enable = true;
-		#	user = "user";
-		#};
+	  windowManager.bspwm.enable = true;
+	  #windowManager.bspwm.package = "pkgs.bspwm-unstable"
+		windowManager.bspwm.configFile = "/etc/bspwm/bspwmrc";
+		windowManager.bspwm.sxhkd.configFile= "/etc/bspwm/sxhkdrc";
+		desktopManager.xterm.enable = false;
 	};
+    	services.picom = {
+  	  	 enable = true;
+		};
+
+#      services.xserver.displayManager.lightdm.enable = true;
+ #     services.displayManager = {
+   #   enable = true;
+#      autoLogin.enable = true;
+#      autoLogin.user = "tonii";
+#    };
   services.xrdp.defaultWindowManager = "bspwm";
 }
+

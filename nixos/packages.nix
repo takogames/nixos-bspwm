@@ -13,10 +13,16 @@
     discord
     obsidian
     librewolf
-    tor-browser
+    tor-browser # reasons....
+    vscode
+    sublime
+    dolphin
+    gimp
+    steam
 
     # Coding stuff
     gnumake
+    lxde.lxsession
     gcc
     nodejs
     python
@@ -29,10 +35,14 @@
     wget
     git
     fastfetch
+    cowsay
+    catnip
+    fortune
     htop
     nix-index
     unzip
     scrot
+    xclip
     ffmpeg
     light
     lux
@@ -61,10 +71,16 @@
     # Xorg stuff
 
     # WMs and stuff
+    blugon
     bspwm
     polybar
-    waybar
+    #waybar
     eww
+    picom
+    dmenu
+    #rofi
+    dunst
+    feh
 
 
     # Sound
@@ -79,7 +95,7 @@
 
 
     # Other
-    home-manager
+   # home-manager
 
   ];
 
