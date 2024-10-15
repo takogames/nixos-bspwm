@@ -14,7 +14,21 @@
 	};
     	services.picom = {
   	  	 enable = true;
+		 shadow = true;
+		 fade = true;
+		 shadowExclude = [
+  			"name = 'Polybar$'"
+				];
+		 vSync = true;
+
+	   	 #settings.blur =
+ 		 #{ method = "gaussian";
+ 		 #   size = 10;
+		 #   deviation = 5.0;
+		 # };
+		 #settings = builtins.readFile /etc/xdg/picom.conf;
 		};
+		
 
 #      services.xserver.displayManager.lightdm.enable = true;
  #     services.displayManager = {

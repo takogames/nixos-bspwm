@@ -4,8 +4,10 @@
     permittedInsecurePackages = ["python-2.7.18.8" "electron-25.9.0"];
   };
 
+
   environment.systemPackages = with pkgs; [
     # Desktop apps
+    pkgs.vinegar  
     audacity
     kitty
     obs-studio
@@ -78,7 +80,7 @@
     eww
     picom
     dmenu
-    #rofi
+    rofi
     dunst
     feh
 

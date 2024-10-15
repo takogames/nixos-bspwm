@@ -7,7 +7,7 @@
 Print
     scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
 
-Shift + Print
+super + Print
     scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
 
 # terminal emulator
@@ -16,7 +16,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+	rofi -show run 
 
 # make sxhkd reload its configuration files:
 super + Escape
