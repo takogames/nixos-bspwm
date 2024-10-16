@@ -14,19 +14,23 @@
 	};
     	services.picom = {
   	  	 enable = true;
-		 shadow = true;
-		 fade = true;
-		 shadowExclude = [
-  			"name = 'Polybar$'"
-				];
-		 vSync = true;
 
-	   	 #settings.blur =
- 		 #{ method = "gaussian";
- 		 #   size = 10;
-		 #   deviation = 5.0;
-		 # };
-		 #settings = builtins.readFile /etc/xdg/picom.conf;
+		 shadow = true;
+		 shadowOpacity = 0.5;
+		 shadowExclude = [
+ 			 "name ~= 'polybar$'"
+			];
+		 fade = true;
+
+		 vSync = true;
+		 settings = {
+			corner-radius = 5;
+			# inactive-dim = 0.2;
+ 		 blur.method = "gaussian";
+ 		    blur.size = 10;
+		    blur.deviation = 5.0;
+		 };
+
 		};
 		
 
