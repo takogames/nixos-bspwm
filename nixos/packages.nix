@@ -1,9 +1,20 @@
-{ pkgs, ... }: {
+{config, pkgs, ... }:
+let
+   unstableTarball =
+     fetchTarball
+       https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+in
+ {
   nixpkgs.config = {
+    
     allowUnfree = true;
     permittedInsecurePackages = ["python-2.7.18.8" "electron-25.9.0"];
+    packageOverrides = pkgs: with pkgs; {
+      unstable = import unstableTarball {
+        config = config.nixpkgs.config;
+     };
   };
-
+};
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
@@ -15,12 +26,14 @@
     discord
     obsidian
     librewolf
-    tor-browser # reasons....
+    tor-browser
     vscode
     sublime
     dolphin
     gimp
     steam
+    osu-lazer-bin
+    kicad
 
     # Coding stuff
     gnumake
@@ -30,7 +43,11 @@
     python
     (python3.withPackages (ps: with ps; [ requests ]))
 
-    # CLI utils
+    # CLIs & utils
+    vim
+    speedcrunch
+    neovim
+    spacevim
     neofetch
     file
     tree
@@ -61,7 +78,12 @@
     lazygit
     bluez
     bluez-tools
-
+    kdePackages.qtsvg
+    wine
+    wine64
+    winetricks
+    wineasio
+    
     # GUI utils
     feh
     imv
@@ -69,8 +91,9 @@
     screenkey
     mako
     gromit-mpx
-
-    # Xorg stuff
+    opentabletdriver
+    # stuff
+    papirus-icon-theme
 
     # WMs and stuff
     blugon
@@ -78,7 +101,7 @@
     polybar
     #waybar
     eww
-    picom
+    unstable.picom
     dmenu
     rofi
     dunst
@@ -97,12 +120,17 @@
 
 
     # Other
+    libtas
+    libtasn1
    # home-manager
 
   ];
 
   fonts.packages = with pkgs; [
     jetbrains-mono
+    comic-mono
+    maple-mono-NF
+    zpix-pixel-font
     noto-fonts
     noto-fonts-emoji
     twemoji-color-font
@@ -112,3 +140,4 @@
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
 }
+
