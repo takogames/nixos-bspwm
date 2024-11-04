@@ -23,17 +23,24 @@ in
     kitty
     obs-studio
     kdenlive
-    discord
-    obsidian
-    librewolf
+    librewolf # web browser of choice
     tor-browser
     vscode
-    sublime
+    #sublime
     dolphin
     gimp
-    steam
-    osu-lazer-bin
-    kicad
+
+    # user packages, for my personal uses
+    #rmg # n64 emulator
+    plover.dev #stenography engine
+    kicad #pcb designing software
+    osu-lazer-bin # osu rhythmm game
+    steam # games
+    obsidian #markdown notes app
+    unstable.renoise #best daw :3
+    discord #no
+    aseprite # pixel artsss
+    krita # paint 
 
     # Coding stuff
     gnumake
@@ -105,7 +112,6 @@ in
     dmenu
     rofi
     dunst
-    feh
 
 
     # Sound
@@ -120,8 +126,7 @@ in
 
 
     # Other
-    libtas
-    libtasn1
+
    # home-manager
 
   ];

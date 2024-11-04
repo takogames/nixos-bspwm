@@ -1,6 +1,7 @@
 {
-  hardware.pulseaudio.enable = false;
-  sound.enable = false;
+   
+  #hardware.pulseaudio.enable = true;
+  #rsound.enable = true;
 
   # rtkit is optional but recommended
   security.rtkit.enable = true;
@@ -13,4 +14,13 @@
     # If you want to use JACK applications, uncomment this
     jack.enable = true;
   };
+
+  imports =
+    [ # ...
+      /etc/musnix
+    ];
+
+  musnix.enable = true;
+  users.users.tonii.extraGroups = [ "audio" ];
+
 }

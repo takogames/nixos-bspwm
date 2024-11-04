@@ -8,6 +8,11 @@
 
 #  nixpkgs.overlays = [ inputs.polymc.overlay ];
 
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 10d";
+  };
   networking.hostName = "nixos"; # Define your hostname.
 
   time.timeZone = "America/Chicago"; # Set your time zone.
