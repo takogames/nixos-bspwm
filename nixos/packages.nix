@@ -1,18 +1,14 @@
 {config, pkgs, ... }:
 let
-   unstableTarball =
-     fetchTarball
-       https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+        unstable = import (fetchTarball https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz) { config = { allowUnfree = true; };  };
 in
+
  {
+  
   nixpkgs.config = {
-    
     allowUnfree = true;
     permittedInsecurePackages = ["python-2.7.18.8" "electron-25.9.0"];
     packageOverrides = pkgs: with pkgs; {
-      unstable = import unstableTarball {
-        config = config.nixpkgs.config;
-     };
   };
 };
 
@@ -29,18 +25,23 @@ in
     #sublime
     dolphin
     gimp
+    vlc
+    protonvpn-cli
 
     # user packages, for my personal uses
     #rmg # n64 emulator
     plover.dev #stenography engine
     kicad #pcb designing software
-    osu-lazer-bin # osu rhythmm game
+    unstable.osu-lazer-bin # osu rhythmm game
     steam # games
     obsidian #markdown notes app
     unstable.renoise #best daw :3
+    lmms # daw that actually works :c
     discord #no
     aseprite # pixel artsss
     krita # paint 
+    anki # flashcards
+    alvr # virtual reality streaming
 
     # Coding stuff
     gnumake
@@ -51,10 +52,11 @@ in
     (python3.withPackages (ps: with ps; [ requests ]))
 
     # CLIs & utils
+    xorg.setxkbmap
     vim
     speedcrunch
     neovim
-    spacevim
+    #spacevim
     neofetch
     file
     tree
