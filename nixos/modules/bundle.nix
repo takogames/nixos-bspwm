@@ -6,5 +6,6 @@
     ./nm.nix
     ./bluetooth.nix
     ./bspwm.nix
+    ./keyboard.nix
   ];
 }

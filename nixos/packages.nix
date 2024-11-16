@@ -4,7 +4,12 @@ let
 in
 
  {
-  
+	#enable flatpaks
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "gtk";
+  xdg.portal.enable =true ;
+  services.flatpak.enable = true;
+
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = ["python-2.7.18.8" "electron-25.9.0"];
@@ -13,27 +18,31 @@ in
 };
 
   environment.systemPackages = with pkgs; [
-    # Desktop apps
-    pkgs.vinegar  
+    # Desktop apps  
     audacity
     kitty
     obs-studio
     kdenlive
     librewolf # web browser of choice
     tor-browser
-    vscode
-    #sublime
+    libsForQt5.kate
     dolphin
     gimp
+    kanata
     vlc
     protonvpn-cli
-
+ 
     # user packages, for my personal uses
+      #games
+    alvr # virtual reality streaming
+    prismlauncher #minecraft
     #rmg # n64 emulator
+    steam # games
+    pkgs.vinegar # life... is roblox
+      #softwares
     plover.dev #stenography engine
     kicad #pcb designing software
     unstable.osu-lazer-bin # osu rhythmm game
-    steam # games
     obsidian #markdown notes app
     unstable.renoise #best daw :3
     lmms # daw that actually works :c
@@ -41,7 +50,9 @@ in
     aseprite # pixel artsss
     krita # paint 
     anki # flashcards
-    alvr # virtual reality streaming
+    blender # 3d modeling software
+
+
 
     # Coding stuff
     gnumake
@@ -64,7 +75,6 @@ in
     git
     fastfetch
     cowsay
-    catnip
     fortune
     htop
     nix-index
