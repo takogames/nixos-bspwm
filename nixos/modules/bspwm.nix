@@ -14,17 +14,17 @@
 		desktopManager.xterm.enable = false;
 	};
     	services.picom = {
+		 # hello travler, or me in 5 hours, sorry this is so unorganized, pull request?
   	  	 enable = true;
                  #package = pkgs.picom-unstable;
 		 backend = "glx";
 		 shadow = true;
 		 shadowOpacity = 0.5;
-		 shadowExclude = [
- 			 "name ~= 'polybar$'"
-			];
-		 fade = true;
 
+
+		 fade = true;
 		 vSync = true;
+
 		 settings = {
 			corner-radius = 7;
 			#inactive-dim = 0.2;
@@ -34,7 +34,9 @@
 	 	 detect-rounded-corners = true;
 		 detect-client-opacity = true;
 		 detect-transient = true;
-
+		 rules = (
+			 {match = "name = 'picom'"; corner-radius = 0; }
+			 );
 		 };
 
 		};

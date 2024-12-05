@@ -1,16 +1,16 @@
 #! /bin/sh
 dunst &
-polybar --config=/etc/polybar/config.ini &
 lxpolkit &
 blugon &
-feh --bg-scale /etc/bspwm/walls/ice.jpg
+polybar --config=/etc/polybar/config.ini &
+feh --bg-scale /etc/bspwm/walls/bridge.jpg &
 xrandr --rate 144 &
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc config border_width         2
-bspc config window_gap           8
+bspc config border_width         1
+bspc config window_gap           1
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
