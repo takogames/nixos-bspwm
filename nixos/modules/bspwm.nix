@@ -1,5 +1,8 @@
 
 { config, lib, pkgs, ...}: with lib;
+let
+        unstable = import (fetchTarball https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz) { config = { allowUnfree = true; };  };
+in
 
 {
 	services.xserver = {
@@ -16,7 +19,7 @@
     	services.picom = {
 		 # hello travler, or me in 5 hours, sorry this is so unorganized, pull request?
   	  	 enable = true;
-                 #package = pkgs.picom-unstable;
+                 package = unstable.pkgs.picom;
 		 backend = "glx";
 		 shadow = true;
 		 shadowOpacity = 0.5;

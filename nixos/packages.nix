@@ -25,35 +25,16 @@ in
     kdenlive
     librewolf # web browser of choice
     tor-browser
+    ungoogled-chromium
     geany
     dolphin
     gimp
     kanata
     vlc
-    protonvpn-cli
  
     # user packages, for my personal uses
-      #games
-    #alvr # virtual reality streaming
-    prismlauncher #minecraft
-    #rmg # n64 emulator
-    steam # games
-    pkgs.vinegar # life... is roblox
-      #softwares
-    unstable.plover.dev #stenography engine
-    kicad #pcb designing software
-    unstable.osu-lazer-bin # osu rhythmm game
-    obsidian #markdown notes app
-    unstable.renoise #best daw :3
-    #lmms # daw that actually works :c
-    discord #no
-    aseprite # pixel artsss
-    krita # paint 
-    anki # flashcards
-    blender # 3d modeling software
-    kiwix # offline web reader
-    qemu
-    OVMF
+ 
+
     # Coding stuff
     cargo
     rustc
@@ -64,13 +45,11 @@ in
     nodejs
     python
     (python3.withPackages (ps: with ps; [ requests ]))
-
+  
     # CLIs & utils
     xorg.setxkbmap
     vim
     speedcrunch
-    neovim
-    #spacevim
     file
     tree
     wget
@@ -99,7 +78,6 @@ in
     lazygit
     bluez
     bluez-tools
-    blueberry
     kdePackages.qtsvg
     wine
     wine64
@@ -113,12 +91,10 @@ in
     screenkey
     mako
     gromit-mpx
-    opentabletdriver
     # stuff
     papirus-icon-theme
 
     # WMs and stuff
-    blugon
     bspwm
     polybar
     eww

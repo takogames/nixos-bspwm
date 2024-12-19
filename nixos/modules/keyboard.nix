@@ -1,6 +1,6 @@
 {...}: {
   services.kanata = {
-enable = true;
+enable = false;
     keyboards = {
       laptop = {
         devices = [];
@@ -17,7 +17,7 @@ enable = true;
          ;; tab  t    r    e    w    q    p    o    i    u    y    [    ]
          ;; @nav g    f    d    s    a    ;    l    k    j    h    '
          ;; lsft b    v    c    x    z    /    .    ,    m    n    rsft
-         ;; lctl lmet lalt           spc            @sem menu rctl
+         ;; lctl met lalt           spc            @sem menu rctl
          ;; )
 
           (deflayer rain
@@ -25,23 +25,23 @@ enable = true;
           tab  f    d    l    g    v    q    r    u    o    ,    [    ]
           @nav s    t    h    c    y    j    n    e    a    i    /
           lsft z    k    m    p    w    x    b    ;    '    .    rsft
-          lctl lmet lalt           spc            @sem menu rctl
+          lctl @met lalt           spc            @qwr menu rctl
           )
 
-          (deflayer semimak
-            grv  1    2    3    4    5    6    7    8    9    0    -    =
-          tab  f    l    h    v    z    q    w    u    o    y    [    ]
-          @nav s    r    n    t    k    c    d    e    a    i    ;
-          lsft x    '    b    m    j    p    g    ,    .    /    rsft
-          lctl lmet lalt           spc            @qwr menu rctl
-          )
+         ;; (deflayer semimak
+         ;;   grv  1    2    3    4    5    6    7    8    9    0    -    =
+         ;; tab  f    l    h    v    z    q    w    u    o    y    [    ]
+         ;; @nav s    r    n    t    k    c    d    e    a    i    ;
+         ;; lsft x    '    b    m    j    p    g    ,    .    /    rsft
+         ;; lctl @met lalt           spc            @qwr menu rctl
+         ;; )
 
           (deflayer qwerty
             grv  1    2    3    4    5    6    7    8    9    0    -    =
           tab  q    w    e    r    t    y    u    i    o    p    [    ]
           @nav a    s    d    f    g    h    j    k    l    ;    '
           lsft z    x    c    v    b    n    m    ,    .    /    rsft
-          lctl lmet lalt           spc            @rin menu rctl
+          lctl @met lalt           spc            @rin menu rctl
           )
 
           (deflayer navigation
@@ -55,7 +55,7 @@ enable = true;
           (defalias
           qwr (layer-switch qwerty)
           rin (layer-switch rain)
-          sem (layer-switch semimak)
+         ;; sem (layer-switch semimak)
 	 ;; pog (layer-switch inqwerted)
 
           mup (movemouse-up 2 1)
@@ -68,9 +68,12 @@ enable = true;
 	  slw (movemouse-speed 25)
 
           nav (layer-switch navigation)
+          
+          ;; in case you want shorthand for other mods
+          LTq (layer-toggle qwerty)
+          met (multi lmet @LTq)
+	  ctrl (multi lmet @LTq)
 
-          lmet (layer-while-held qwerty)
-          lctl (layer-while-held qwerty)
           * (switch
          ((key-history w 1)) h break
          ((key-history y 1)) , break
