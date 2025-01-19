@@ -25,7 +25,7 @@ in
 		 shadowOpacity = 0.5;
 
 
-		 fade = true;
+		 fade = false;
 		 vSync = true;
 
 		 settings = {

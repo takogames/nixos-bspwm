@@ -9,22 +9,27 @@ in {
  users.users.tonii.packages = with pkgs; [
    #prismlauncher
    steam
+   plover.dev
    kicad
    discord
    unstable.osu-lazer-bin
    obsidian
    #lmms
-   olive-editor
-   davinci-resolve
+  # olive-editor
+  # davinci-resolve
    aseprite
    krita
    anki
-   blender
+  # blender
    via
    blugon
    musescore
    unstable.rustlings
- 
+   unstable.milkytracker
+   qmk
+   imhex
+   ghidra
+   dolphin-emu 
 ];
    nixpkgs.config.allowUnfree = true;
 	programs.steam = {

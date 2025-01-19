@@ -21,19 +21,19 @@ in
     # Desktop apps  
     audacity
     kitty
+    unstable.ghostty
     obs-studio
     kdenlive
-    librewolf # web browser of choice
+    unstable.librewolf # web browser of choice
     tor-browser
     ungoogled-chromium
     geany
-    dolphin
+    nautilus
     gimp
-    kanata
     vlc
  
     # user packages, for my personal uses
- 
+         # moved to modules/Tower.nix
 
     # Coding stuff
     cargo
@@ -45,7 +45,8 @@ in
     nodejs
     python
     (python3.withPackages (ps: with ps; [ requests ]))
-  
+    cmake
+    pkg-config
     # CLIs & utils
     xorg.setxkbmap
     vim
@@ -79,10 +80,8 @@ in
     bluez
     bluez-tools
     kdePackages.qtsvg
-    wine
-    wine64
-    winetricks
-    wineasio
+    wineWowPackages.stable
+    p7zip
     
     # GUI utils
     feh
@@ -95,10 +94,8 @@ in
     papirus-icon-theme
 
     # WMs and stuff
-    bspwm
     polybar
     eww
-    unstable.picom
     dmenu
     rofi
     #dunst
@@ -109,9 +106,7 @@ in
 
     # GPU stuff 
     amdvlk
-    rocm-opencl-icd
-    glaxnimate
-
+    glib
 
     # Other
 
@@ -121,7 +116,12 @@ in
 
   fonts.packages = with pkgs; [
     jetbrains-mono
+    noto-fonts
+    noto-fonts-extra
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
     comic-mono
+    unstable.notonoto
     maple-mono-NF
     zpix-pixel-font
     noto-fonts
